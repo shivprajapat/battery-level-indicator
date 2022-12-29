@@ -145,18 +145,18 @@ body {
   background: var(--gradient-color-green);
 }
 /* Battery charging animation */
-.animation-green {
+.animated-green {
   background: var(--gradient-color-green);
   animation: animated-chargin-battery 1.2s infinite alternate;
 }
 /* Low battery animation */
-.animation-red {
+.animated-red {
   background: var(--gradient-color-red);
   animation: animated-low-battery 1.2s infinite alternate;
 }
 
-.animation-red,
-.animation-green,
+.animated-red,
+.animated-green,
 .green-color {
   -webkit-background-clip: text;
   color: transparent;
@@ -201,7 +201,22 @@ body {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  .battery__card{
+   zoom: .8;
+  }  
+}
+
 
 /* For medium devices */
-
+@media screen and (min-width:480px) {
+  .battery__card{
+    width: 400px;
+  }  
+}
 /* For large devices */
+@media screen and (min-width: 1024px) {
+  .battery__card{
+    zoom: 1.5;
+  }  
+}

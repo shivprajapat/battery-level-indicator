@@ -61,3 +61,31 @@ function initBattery() {
     });
   });
 }
+
+
+// theme light and dark mode
+
+const themeLightDark = () => {
+  const darkModeCheckbox = document.querySelector(".js-dark-mode");
+
+  const themeMode = () => {
+    if (localStorage.getItem("theme-dark") == "false") {
+      document.body.classList.remove("t-dark");
+    } else {
+      document.body.classList.add("t-dark");
+    }
+  };
+  darkModeCheckbox.addEventListener("click", function () {
+    localStorage.setItem("theme-dark", this.checked);
+    themeMode();
+  });
+  //   check for saved user preference, if any, on load of the website
+
+  if (localStorage.getItem("theme-dark") !== null) {
+    themeMode();
+  }
+  if (document.body.classList.contains("t-dark")) {
+    darkModeCheckbox.checked = true;
+  }
+};
+themeLightDark();
